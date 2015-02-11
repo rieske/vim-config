@@ -11,6 +11,8 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'kana/vim-smartinput'
 Plugin 'mmozuras/vim-whitespace'
+Plugin 'kien/ctrlp.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -29,19 +31,21 @@ set laststatus=2
 
 set wildmenu
 set wildmode=list:longest
-set wildignore+=*.o,*.obj,*.class,*.so,*.gcda
+set wildignore+=*.o,*.obj,*.class,*.so,*.gcda,*.gcov,*.gcno,*.lo,*.la,*.out
 
-set fileencodings=utf-8
+set encoding=utf-8
 set hlsearch
 set incsearch
-"set viminfo='20,<50,s10,h
 set visualbell t_vb=
 set exrc
 nmap <silent> <C-N> :silent noh<CR>
 
+set autoread
+set ruler
+
 inoremap <Nul> <C-x><C-o>
 
-autocmd VimResized * :wincmd = 
+autocmd VimResized * :wincmd =
 
 filetype plugin indent on
 syntax on
@@ -61,16 +65,21 @@ map <space> <c-f>
 map <backspace> <c-b>
 
 " use - to jump between windows
-map - <c-w>w 
+map - <c-w>w
 map _ <c-\>
 
 set complete=.,w,b,u,t,i
 
 set tags+=~/.system.tags
 
-colorscheme desert
+set t_Co=16
+set background=dark
+colorscheme solarized
+"colorscheme desert
 
 nnoremap <f12> :noh<cr>
+nnoremap B ^
+nnoremap E $
 
 set smarttab
 
@@ -81,6 +90,8 @@ let java_allow_cpp_keywords=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
