@@ -101,4 +101,3 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
 let g:ycm_confirm_extra_conf = 0
 
-
