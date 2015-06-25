@@ -72,10 +72,10 @@ set complete=.,w,b,u,t,i
 
 set tags+=~/.system.tags
 
-set t_Co=16
 set background=dark
 colorscheme solarized
-"colorscheme desert
+set t_Co=256
+let g:solarized_termcolors=256
 
 nnoremap <f12> :noh<cr>
 nnoremap B ^
