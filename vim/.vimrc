@@ -6,13 +6,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'kana/vim-smartinput'
 Plugin 'mmozuras/vim-whitespace'
 Plugin 'kien/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
@@ -72,7 +73,7 @@ set complete=.,w,b,u,t,i
 
 set tags+=~/.system.tags
 
-set background=dark
+set background=light
 colorscheme solarized
 set t_Co=256
 let g:solarized_termcolors=256
@@ -97,6 +98,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:loaded_syntastic_java_javac_checker = 1
 
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
 let g:ycm_confirm_extra_conf = 0
