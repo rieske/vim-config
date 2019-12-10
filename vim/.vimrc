@@ -7,13 +7,14 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'kana/vim-smartinput'
 Plugin 'mmozuras/vim-whitespace'
 Plugin 'kien/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 
@@ -102,4 +103,12 @@ let g:loaded_syntastic_java_javac_checker = 1
 
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
 let g:ycm_confirm_extra_conf = 0
+
+" vim-go
+let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
+let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
+"au filetype go inoremap <buffer> . .<C-x><C-o>
+
+" NERDtree
+nnoremap <C-g> :NERDTreeToggle<CR>
 
