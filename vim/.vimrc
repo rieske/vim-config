@@ -71,6 +71,7 @@ map - <c-w>w
 map _ <c-\>
 
 set complete=.,w,b,u,t,i
+set completeopt=menu,popup
 
 set tags+=~/.system.tags
 
@@ -103,11 +104,30 @@ let g:loaded_syntastic_java_javac_checker = 1
 
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
 
+
 " vim-go
 let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
 let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
+let g:go_doc_popup_window = 1
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_rename_command='gopls'
 "au filetype go inoremap <buffer> . .<C-x><C-o>
 
 " NERDtree
 nnoremap <C-g> :NERDTreeToggle<CR>
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <f2> <plug>(lsp-rename)
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
