@@ -6,7 +6,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'kana/vim-smartinput'
@@ -103,7 +102,6 @@ let g:syntastic_check_on_wq = 0
 let g:loaded_syntastic_java_javac_checker = 1
 
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
-let g:ycm_confirm_extra_conf = 0
 
 " vim-go
 let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
