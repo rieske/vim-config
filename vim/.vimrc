@@ -60,6 +60,7 @@ set autoindent
 " press gi followed by a character will insert that character at cursor
 map gi i<space><esc>r
 
+set backspace=indent,eol,start
 
 " these two maps enable you to press space to move cursor down a screen,
 " and press backspace up a screen.
