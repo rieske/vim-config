@@ -126,10 +126,15 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal signcolumn=yes
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> <f1> <plug>(lsp-document-diagnostics)
+    nmap <buffer> <f2> <plug>(lsp-hover)
     nmap <buffer> <f6> <plug>(lsp-rename)
     nmap <buffer> <f7> <plug>(lsp-references)
     " refer to doc to add more commands
 endfunction
+
+let g:lsp_highlight_references_enabled = 1
+let g:lsp_signs_enabled = 1         " enable signs
+let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 
 augroup lsp_install
     au!
