@@ -15,6 +15,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'mattn/vim-lsp-settings'
+
 call vundle#end()
 
 
@@ -121,7 +125,9 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> <f2> <plug>(lsp-rename)
+    nmap <buffer> <f1> <plug>(lsp-document-diagnostics)
+    nmap <buffer> <f6> <plug>(lsp-rename)
+    nmap <buffer> <f7> <plug>(lsp-references)
     " refer to doc to add more commands
 endfunction
 
@@ -130,4 +136,3 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
-
