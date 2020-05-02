@@ -60,9 +60,6 @@ set tabstop=4
 set expandtab
 set autoindent
 
-" press gi followed by a character will insert that character at cursor
-map gi i<space><esc>r
-
 set backspace=indent,eol,start
 
 " these two maps enable you to press space to move cursor down a screen,
@@ -126,7 +123,7 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal signcolumn=yes
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> <f1> <plug>(lsp-document-diagnostics)
-    nmap <buffer> <f2> <plug>(lsp-hover)
+    nmap <buffer> <s-k> <plug>(lsp-hover)
     nmap <buffer> <f6> <plug>(lsp-rename)
     nmap <buffer> <f7> <plug>(lsp-references)
     nmap <buffer> <f8> <plug>(lsp-implementation)
