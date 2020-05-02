@@ -129,6 +129,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <f2> <plug>(lsp-hover)
     nmap <buffer> <f6> <plug>(lsp-rename)
     nmap <buffer> <f7> <plug>(lsp-references)
+    nmap <buffer> <f8> <plug>(lsp-implementation)
     " refer to doc to add more commands
 endfunction
 
