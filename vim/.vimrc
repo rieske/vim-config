@@ -142,3 +142,7 @@ augroup END
 
 "let g:lsp_log_verbose = 1
 "let g:lsp_log_file = expand('~/vim-lsp.log')
+
+let g:lsp_settings = {
+            \    'clangd': {'cmd': ['clangd', '-cross-file-rename']}
+\}
