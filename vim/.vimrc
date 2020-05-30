@@ -116,8 +116,42 @@ let g:go_rename_command='gopls'
 "au filetype go inoremap <buffer> . .<C-x><C-o>
 
 " NERDtree
-nnoremap <C-g> :NERDTreeToggle<CR>
 
+" If more than one window and previous buffer was NERDTree, go back to it.
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+
+"Switch between different windows by their direction`
+no <C-j> <C-w>j| "switching to below window
+no <C-k> <C-w>k| "switching to above window
+no <C-l> <C-w>l| "switching to right window
+no <C-h> <C-w>h| "switching to left window
+
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind if NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
+
+function! ToggleNerdTree()
+  set eventignore=BufEnter
+  NERDTreeToggle
+  set eventignore=
+endfunction
+
+nnoremap <C-g> :call ToggleNerdTree()<CR>
+
+" LSP
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
