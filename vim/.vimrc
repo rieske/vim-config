@@ -19,6 +19,8 @@ Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
 Plugin 'mattn/vim-lsp-settings'
 
+Plugin 'udalov/kotlin-vim'
+
 call vundle#end()
 
 
@@ -92,19 +94,9 @@ let java_highlight_functions="style"
 let java_allow_cpp_keywords=1
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:loaded_syntastic_java_javac_checker = 1
-
-let g:syntastic_cpp_compiler_options = ' -std=c++14'
-
 
 " vim-go
 let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
