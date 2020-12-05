@@ -20,6 +20,7 @@ Plugin 'prabirshrestha/vim-lsp'
 Plugin 'mattn/vim-lsp-settings'
 
 Plugin 'udalov/kotlin-vim'
+Plugin 'hashivim/vim-vagrant'
 
 call vundle#end()
 
