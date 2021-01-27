@@ -5,12 +5,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'altercation/vim-colors-solarized'
+
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'kana/vim-smartinput'
 Plugin 'mmozuras/vim-whitespace'
 Plugin 'kien/ctrlp.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/a.vim' " switch between .h and .c
@@ -24,6 +27,13 @@ Plugin 'hashivim/vim-vagrant'
 
 call vundle#end()
 
+set encoding=utf-8
+set statusline+=%#warningmsg#
+set statusline+=%*
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+set updatetime=100
 
 set noswapfile
 set showmode
@@ -41,7 +51,6 @@ set wildmenu
 set wildmode=list:longest
 set wildignore+=*.o,*.obj,*.class,*.so,*.gcda,*.gcov,*.gcno,*.lo,*.la,*.out
 
-set encoding=utf-8
 set hlsearch
 set incsearch
 set visualbell t_vb=
@@ -93,11 +102,6 @@ set smarttab
 let java_highlight_all=1
 let java_highlight_functions="style"
 let java_allow_cpp_keywords=1
-
-set statusline+=%#warningmsg#
-set statusline+=%*
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 
 " vim-go
 let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
