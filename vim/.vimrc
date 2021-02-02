@@ -152,12 +152,20 @@ nnoremap <C-g> :call ToggleNerdTree()<CR>
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> <f1> <plug>(lsp-document-diagnostics)
-    nmap <buffer> <s-k> <plug>(lsp-hover)
-    nmap <buffer> <f6> <plug>(lsp-rename)
+	nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
     nmap <buffer> <f7> <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
     nmap <buffer> <f8> <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <f6> <plug>(lsp-rename)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> <f1> <plug>(lsp-document-diagnostics)
+    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
     " refer to doc to add more commands
 endfunction
 
