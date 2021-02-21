@@ -10,10 +10,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
 Plugin 'vim-airline/vim-airline'
-Plugin 'kana/vim-smartinput'
 Plugin 'mmozuras/vim-whitespace'
-Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/a.vim' " switch between .h and .c
@@ -98,6 +99,17 @@ nnoremap B ^
 nnoremap E $
 
 set smarttab
+
+" ctrl-p opens fzf
+nnoremap <C-p> :<C-u>FZF<CR>
+"## Solarized Light color scheme for fzf
+"#export FZF_DEFAULT_OPTS="
+"#  --color fg:-1,bg:-1,hl:$blue,fg+:$base02,bg+:$base2,hl+:$blue
+"#  --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
+"#"
+let g:fzf_colors =
+    \ { 'fg': ['fg', 'Black'],
+    \ 'bg': ['bg', 'Black']}
 
 let java_highlight_all=1
 let java_highlight_functions="style"
