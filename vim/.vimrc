@@ -124,6 +124,13 @@ let g:go_info_mode='gopls'
 let g:go_rename_command='gopls'
 "au filetype go inoremap <buffer> . .<C-x><C-o>
 
+" Persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+
+set undolevels=1000
+set undoreload=10000
+
 " NERDtree
 
 " If more than one window and previous buffer was NERDTree, go back to it.
