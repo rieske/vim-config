@@ -89,11 +89,6 @@ set completeopt=menu,popup
 
 set tags+=~/.system.tags
 
-set background=light
-colorscheme solarized
-set t_Co=256
-let g:solarized_termcolors=256
-
 nnoremap <f12> :noh<cr>
 nnoremap B ^
 nnoremap E $
