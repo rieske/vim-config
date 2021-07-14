@@ -28,6 +28,9 @@ Plugin 'hashivim/vim-vagrant'
 
 call vundle#end()
 
+set background=light
+colorscheme solarized
+
 set encoding=utf-8
 set statusline+=%#warningmsg#
 set statusline+=%*
