@@ -26,6 +26,8 @@ Plugin 'mattn/vim-lsp-settings'
 Plugin 'udalov/kotlin-vim'
 Plugin 'hashivim/vim-vagrant'
 
+Plugin 'rust-lang/rust.vim'
+
 call vundle#end()
 
 set background=light
