@@ -28,6 +28,8 @@ Plugin 'hashivim/vim-vagrant'
 
 Plugin 'rust-lang/rust.vim'
 
+Plugin 'ledger/vim-ledger'
+
 call vundle#end()
 
 set background=light
