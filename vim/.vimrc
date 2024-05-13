@@ -29,6 +29,7 @@ Plugin 'hashivim/vim-vagrant'
 Plugin 'rust-lang/rust.vim'
 
 Plugin 'ledger/vim-ledger'
+Plugin 'github/copilot.vim'
 
 call vundle#end()
 
@@ -40,6 +41,10 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" vim-ledger
+let g:ledger_is_hledger=v:false
+
 
 set updatetime=100
 
@@ -207,3 +212,4 @@ augroup END
 let g:lsp_settings = {
             \    'clangd': {'cmd': ['clangd', '-cross-file-rename']}
 \}
+
